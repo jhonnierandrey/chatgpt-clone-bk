@@ -2,6 +2,32 @@
 
 [api] - ChatGPT Clone with NodeJS, Express and TypeScript
 
+## GET Endpoints:
+
+- / : Main endpoint, can be used to check the api status, if active, will return: `{"message": "All services active."}`
+- /api/models : Returns a list of available models from OpenAI: `{"models": "[...]"`
+
+## POST Endpoints:
+
+- /api : Returns a message when a prompt + model is sent
+
+Payload sample:
+
+```
+{
+    "message" : "What's the capital of Lebanon?",
+    "currentModel" : "text-davinci-003"
+}
+```
+
+Response:
+
+```
+{
+    "message": "\n\nBeirut."
+}
+```
+
 ## How to use:
 
 > Before you can run this app, you need to get an API KEY from OpenAI, please go to [OpenAI Docs](https://platform.openai.com/docs/api-reference) and add your API KEY into the .env file as a value for OPENAI_API_KEY.
